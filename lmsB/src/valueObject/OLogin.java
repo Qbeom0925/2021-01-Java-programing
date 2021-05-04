@@ -1,8 +1,6 @@
 package valueObject;
 
-import model.MHwewon;
-
-public class OHwewon {
+public class OLogin {
 
    private String id;
    private String password;
@@ -11,19 +9,9 @@ public class OHwewon {
    private String hwakgwa;
    private String PhoneNum;
    
-   public OHwewon() {
+   public OLogin() {
       // TODO Auto-generated constructor stub
    }
-   public void setAddress(MHwewon mHwewon) {
-	    this.id=mHwewon.getId();
-		this.password=mHwewon.getPassword();
-		this.name=mHwewon.getName();
-		this.address=mHwewon.getAddress();
-		this.hwakgwa=mHwewon.getHwakgwa();
-		this.PhoneNum=mHwewon.getPhoneNum();
-		
-	}
-   
    public String getId() {return id;}
    public void setId(String id) {this.id= id;}
    
@@ -41,6 +29,4 @@ public class OHwewon {
    
    public String getPhoneNum() {return PhoneNum;}
    public void setPhoneNum(String Phonenum) {this.PhoneNum=Phonenum;}
-
-   
 }
