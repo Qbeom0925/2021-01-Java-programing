@@ -37,8 +37,6 @@ public class MHwewon {
 	public void save(BufferedWriter bw, OHwewon oHwewon) {
 		this.set(oHwewon);
 		try {
-//			this.input=(id+'/'+password+'/'+name+'/'+address+'/'+address+'/'+hwakgwa+'/'+PhoneNum);
-//			bw.write(input);
 			bw.write(id);
 			bw.write("\n");
 			bw.write(password);

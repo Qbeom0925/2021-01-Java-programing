@@ -18,7 +18,7 @@ public class VLogin {
 		this.cLogin = new CLogin();
    }
 
-	   public void show() {
+	   public  OHwewon show() {
 	      System.out.println("아이디와 비밀번호를 입력 하세요.:");
 	      OLogin oLogin = new OLogin();
 	      
@@ -32,10 +32,11 @@ public class VLogin {
 	      
 	      OHwewon oHwewon = this.cLogin.validate(oLogin);
 	      if (oHwewon != null) {
-	    	  System.out.print(oHwewon.getName()+"님 안녕하세요");
+	    	  return oHwewon;
 	      }
 	      else {
 	    	  System.out.print("아이디와 비밀번호가 올바르지 않습니다.");
+	    	  return null;
 	      }
 	      
 }

@@ -1,7 +1,2 @@
-/control/
-/dataAccessObject/
-/dataFiles/
-/main/
-/model/
-/valueObject/
 /view/
+/dataAccessObject/
