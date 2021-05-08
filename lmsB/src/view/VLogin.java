@@ -19,7 +19,7 @@ public class VLogin {
    }
 
 	   public  OHwewon show() {
-	      System.out.println("아이디와 비밀번호를 입력 하세요.:");
+	      System.out.println("아이디와 비밀번호를 입력 하세요.");
 	      OLogin oLogin = new OLogin();
 	      
 	      System.out.print("아이디 :");

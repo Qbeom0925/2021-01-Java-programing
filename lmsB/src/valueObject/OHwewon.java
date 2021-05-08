@@ -41,6 +41,4 @@ public class OHwewon {
    
    public String getPhoneNum() {return PhoneNum;}
    public void setPhoneNum(String Phonenum) {this.PhoneNum=Phonenum;}
-
-   
 }

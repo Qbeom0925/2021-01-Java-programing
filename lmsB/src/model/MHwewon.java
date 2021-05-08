@@ -18,7 +18,6 @@ public class MHwewon {
 	private String input;
 	
 	public MHwewon() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public boolean read(Scanner scanner) {

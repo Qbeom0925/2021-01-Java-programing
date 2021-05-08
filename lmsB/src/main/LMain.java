@@ -1,7 +1,6 @@
 package main;
 
 import java.util.Scanner;
-
 import view.VInitial;
 
 public class LMain {
@@ -12,7 +11,7 @@ public class LMain {
    public LMain(Scanner scanner) {
       this.scanner = scanner;
       this.initial = new VInitial(scanner);
-   }
+    }
    public void run() {
       System.out.println("LMain::run()");
       this.initial.show();

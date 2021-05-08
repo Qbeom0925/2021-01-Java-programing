@@ -1,2 +1,7 @@
+/control/
 /view/
+/data/
+/model/
+/valueObject/
+/main/
 /dataAccessObject/
