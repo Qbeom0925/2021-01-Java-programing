@@ -12,8 +12,9 @@ import valueObject.OIndex;
 
 public class DIndex {
 	
+	private static final String PATHNAME = "data/";
+
 	public DIndex() {
-		
 	}
 
 	public Vector<OIndex> readAll(String fileName) {
@@ -21,7 +22,7 @@ public class DIndex {
 		Vector<OIndex> indices = new Vector<OIndex>();
 		
 		   try {
-			   File file = new File(fileName);
+			   File file = new File(PATHNAME+fileName);
 			   Scanner scanner = new Scanner(file);
 			   MIndex mIndex = new MIndex();
 			   
