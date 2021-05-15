@@ -11,6 +11,7 @@ import valueObject.OIndex;
 import valueObject.OLecture;
 
 public class DLecture {
+	private MLecture mLecture;
 	
 	private static final String PATHNAME="data/";
  public DLecture() {
@@ -18,13 +19,12 @@ public class DLecture {
  }
  
  public Vector<OLecture> readAll(String fileName){
-  
   Vector<OLecture> lectures = new Vector<OLecture>();
   
   try {
    File file = new File(PATHNAME+fileName);
    Scanner scan = new Scanner(file);
-   MLecture mLecture = new MLecture();
+   this.mLecture = new MLecture();
    while(mLecture.read(scan)){
     OLecture oLecture = new OLecture();
     oLecture.set(mLecture);

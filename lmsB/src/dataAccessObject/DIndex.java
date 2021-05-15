@@ -13,6 +13,7 @@ import valueObject.OIndex;
 public class DIndex {
 	
 	private static final String PATHNAME = "data/";
+	private MIndex mIndex;
 
 	public DIndex() {
 	}
@@ -24,7 +25,7 @@ public class DIndex {
 		   try {
 			   File file = new File(PATHNAME+fileName);
 			   Scanner scanner = new Scanner(file);
-			   MIndex mIndex = new MIndex();
+			   this.mIndex = new MIndex();
 			   
 			   while(mIndex.read(scanner)) {
 				   OIndex oIndex = new OIndex();
