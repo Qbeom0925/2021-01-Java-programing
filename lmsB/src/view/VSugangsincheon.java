@@ -67,7 +67,7 @@ public class VSugangsincheon {
 				}
 			}
 		}else if(input == 2) {
-			this.Mdelete(oHwewon);
+			vMridamgi.Mdelete(oHwewon);
 		}else if(input ==3) {
 			this.Sdelete(oHwewon);
 		}else if(input==4) {
@@ -91,44 +91,6 @@ public class VSugangsincheon {
 			e.printStackTrace();
 		}
 	}	
-
-	public void Mdelete(OHwewon oHwewon) {
-		Vector v = new Vector();
-		int index=0;
-	        try{
-	            File file = new File("user/"+oHwewon.getId()+"_bag.txt");
-	            FileReader filereader = new FileReader(file);
-	            BufferedReader bufReader = new BufferedReader(filereader);
-	            String line = "";
-	            while((line = bufReader.readLine()) != null){
-	                System.out.println('['+String.valueOf(index)+']'+line);
-	                v.add(line);
-	                index++;
-	            }
-	            System.out.println("삭제할 과목의 번호를 입력하세요...");
-	    		int input = this.scanner.nextInt();
-	    		v.remove(input);
-	    		file.delete();
-	    		
-	            File Newfile = new File("user/"+oHwewon.getId()+"_bag.txt");
-	            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(Newfile));
-	            for(int i= 0; i<v.size();i++) {
-	            String inputString = (String) v.get(i);
-	            bufferedWriter.write(inputString);
-	            bufferedWriter.newLine();
-	            }
-                bufferedWriter.close();
-	            bufReader.close();
-	        }catch (FileNotFoundException e) {
-	            // TODO: handle exception
-	        }catch(IOException e){
-	            System.out.println(e);
-	        }
-	        System.out.print("삭제 완료.");
-	}
-
-
-
 
 	public void Sdelete(OHwewon oHwewon) {
 		Vector v = new Vector();
