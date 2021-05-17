@@ -1,4 +1,4 @@
-	package view;
+	package Textview;
 	
 	import java.util.Scanner;
 	import java.util.Vector;
