@@ -46,7 +46,7 @@ public class VSugangsincheon {
 			System.out.println("수강 신청을 시작합니다");
 			String campusFileName = this.vCampus.show("root", "캠퍼스를");
 			if (campusFileName != null) {
-				for (int i = 1; i == 1;) {
+				while(true) {
 					String collegeFileName = this.vCollege.show(campusFileName, "대학를");
 					if (campusFileName != null) {
 						String departmentFileName = this.vDepartment.show(collegeFileName, "학과를");
@@ -58,7 +58,7 @@ public class VSugangsincheon {
 								input = this.scanner.nextInt();
 								if (input == 1) {
 									vMridamgi.get(oLecture, oHwewon);
-									System.out.println("추가 신청하시겠습니까? 예(1) 아니요(2)");
+									System.out.println("추가 신청및 담기 하시겠습니까? 예(1) 아니요(2)");
 									choice = this.scanner.nextInt();
 									if (choice == 1) {
 										System.out.println("-------추가신청-------");
@@ -70,7 +70,7 @@ public class VSugangsincheon {
 								}
 								if (input == 2) {
 									this.save(oLecture, oHwewon);
-									System.out.println("추가 신청하시겠습니까? 예(1) 아니요(2)");
+									System.out.println("추가 신청및 담기 하시겠습니까? 예(1) 아니요(2)");
 									choice = this.scanner.nextInt();
 									if (choice == 1) {
 										System.out.println("-------추가신청-------");

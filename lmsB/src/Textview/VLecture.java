@@ -19,6 +19,8 @@
 	 public OLecture show(String FileName, String message) {
 	  System.out.println(message+" 선택하세요..");
 	  
+	  
+	  
 	  Vector<OLecture> lectures = cLecture.getAll(FileName);
 	  for(OLecture lecture: lectures) {
 	   System.out.println(lecture.getId()+ " "
