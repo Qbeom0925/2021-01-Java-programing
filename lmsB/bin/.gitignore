@@ -1,4 +1,5 @@
-/windowsView/
-/main/
-/view/
 /Textview/
+/control/
+/dataAccessObject/
+/model/
+/valueObject/

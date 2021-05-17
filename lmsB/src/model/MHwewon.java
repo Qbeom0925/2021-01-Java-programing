@@ -35,19 +35,21 @@ public class MHwewon {
 
 	public void save(BufferedWriter bw, OHwewon oHwewon) {
 		this.set(oHwewon);
+		String input = id+'/'+password+'/'+name+'/'+address+'/'+hwakgwa+'/'+PhoneNum;
 		try {
-			bw.write(id);
-			bw.write("\n");
-			bw.write(password);
-			bw.write("\n");
-			bw.write(name);
-			bw.write("\n");
-			bw.write(address);
-			bw.write("\n");
-			bw.write(hwakgwa);
-			bw.write("\n");
-			bw.write(PhoneNum);
-			bw.write("\n");
+			bw.write(input);
+//			bw.write(id);
+//			bw.write("\n");
+//			bw.write(password);
+//			bw.write("\n");
+//			bw.write(name);
+//			bw.write("\n");
+//			bw.write(address);
+//			bw.write("\n");
+//			bw.write(hwakgwa);
+//			bw.write("\n");
+//			bw.write(PhoneNum);
+//			bw.write("\n");
 			bw.newLine();
 			bw.flush();
 			bw.close();
