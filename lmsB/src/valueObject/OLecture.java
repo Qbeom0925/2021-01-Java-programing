@@ -9,6 +9,7 @@ public class OLecture {
  private String profName;
  private String credits;
  private String time;
+// private String grade;
  
 
  public OLecture() {}
@@ -21,6 +22,14 @@ public class OLecture {
   this.credits = mLecture.getCredits();
   this.time = mLecture.getTime();
  }
+ 
+// public void set_past(MLecture mLecture) {
+//	  this.id = mLecture.getId();
+//	  this.lectureName = mLecture.getLectureName();
+//	  this.profName = mLecture.getProfName();
+//	  this.credits = mLecture.getCredits();
+//	  this.grade = mLecture.getGrade();
+// }
  
  public String getId() {
   return id;
@@ -52,4 +61,11 @@ public class OLecture {
  public void setTime(String time) {
   this.time = time;
  }
+
+//public String getGrade() {
+//	return grade;
+//}
+//public void setGrade(String grade) {
+//	this.grade = grade;
+//}
 } 

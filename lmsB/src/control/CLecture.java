@@ -3,6 +3,7 @@ package control;
 import java.util.Vector;
 
 import dataAccessObject.DLecture;
+import valueObject.OHwewon;
 import valueObject.OIndex;
 import valueObject.OLecture;
 
@@ -18,5 +19,12 @@ public class CLecture {
   Vector<OLecture> lectures = this.dLecture.readAll(departmentFileName);
   return lectures;
  }
+
+public float getpast(OHwewon oHwewon) {
+	
+	float avggrade = this.dLecture.readpast(oHwewon);
+	  return avggrade;
+}
+
 
 }

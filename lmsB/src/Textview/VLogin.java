@@ -1,11 +1,23 @@
 package Textview;
 
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.InvalidParameterSpecException;
 import java.util.Scanner;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 
 import control.CHwewonDeungrok;
 import control.CLogin;
+import control.CPassword;
 import valueObject.OHwewon;
 import valueObject.OLogin;
+import valueObject.OPassword;
 
 public class VLogin {
 	
@@ -18,7 +30,7 @@ public class VLogin {
 		this.cLogin = new CLogin();
    }
 
-	   public  OHwewon show() {
+	   public  OHwewon show(){
 	      System.out.println("아이디와 비밀번호를 입력 하세요.");
 	      OLogin oLogin = new OLogin();
 	      
@@ -29,6 +41,8 @@ public class VLogin {
 	      System.out.print("비밀번호 :");
 	      String password = scanner.next();
 	      oLogin.setPassword(password);
+
+//	      CPassword.CLoginpw(password);
 	      
 	      OHwewon oHwewon = this.cLogin.validate(oLogin);
 	      if (oHwewon != null) {

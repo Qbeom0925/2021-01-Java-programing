@@ -1,5 +1,18 @@
 package valueObject;
 
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.InvalidParameterSpecException;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+
+import control.CPassword;
+
 public class OLogin {
 
    private String id;
@@ -15,7 +28,11 @@ public class OLogin {
    public String getId() {return id;}
    public void setId(String id) {this.id= id;}
    
-   public String getPassword() {return password;}
+   public String getPassword(){
+	  String pw=CPassword.CDpw(password);
+	   this.password=CPassword.CLoginpw(pw);
+	   return password;
+	}
    public void setPassword(String password) {this.password= password;}
    
    public String getName() {return name;}

@@ -8,6 +8,7 @@ public class MLecture {
  private String profName;
  private String credits;
  private String time;
+// private String grade;
  
  public MLecture() {}
 
@@ -22,6 +23,18 @@ public class MLecture {
   }
   return false;
  }
+ 
+// public boolean read_past(Scanner scan) {
+//  if(scan.hasNext()) {
+//	   this.id = scan.next();
+//	   this.lectureName = scan.next();
+//	   this.profName = scan.next();
+//	   this.credits = scan.next();
+//	   this.grade = scan.next();
+//	return true;
+//	}
+//	  return false;
+// }
 
  public String getId() {
   return id;
@@ -62,5 +75,13 @@ public class MLecture {
  public void setTime(String time) {
   this.time = time;
  }
+
+//public String getGrade() {
+//	return grade;
+//}
+//
+//public void setGrade(String grade) {
+//	this.grade = grade;
+//}
 
 } 

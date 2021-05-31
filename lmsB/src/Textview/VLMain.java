@@ -1,6 +1,16 @@
 package Textview;
 
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.InvalidParameterSpecException;
 import java.util.Scanner;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 
 public class VLMain {
    
@@ -11,12 +21,12 @@ public class VLMain {
       this.scanner = scanner;
       this.initial = new VInitial(scanner);
     }
-   public void run() {
+   public void run() throws InvalidKeyException, NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidParameterSpecException, UnsupportedEncodingException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException {
       System.out.println("LMain::run()");
       this.initial.show();
    }
 
-   public static void main(String[] args) {
+   public static void main(String[] args) throws InvalidKeyException, NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidParameterSpecException, UnsupportedEncodingException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException {
       Scanner scanner = new Scanner(System.in);
       VLMain main = new VLMain(scanner);
       main.run();

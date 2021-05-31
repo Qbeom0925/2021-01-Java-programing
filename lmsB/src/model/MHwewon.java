@@ -3,7 +3,17 @@ package model;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.InvalidParameterSpecException;
 import java.util.Scanner;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 
 import valueObject.OHwewon;
 
@@ -34,23 +44,19 @@ public class MHwewon {
 	}
 
 	public void save(BufferedWriter bw, OHwewon oHwewon) {
-		this.set(oHwewon);
-		String input = id+'/'+password+'/'+name+'/'+address+'/'+hwakgwa+'/'+PhoneNum;
+		try {
+			this.set(oHwewon);
+		} catch (InvalidKeyException | NoSuchAlgorithmException | InvalidKeySpecException | NoSuchPaddingException
+				| InvalidParameterSpecException | UnsupportedEncodingException | BadPaddingException
+				| IllegalBlockSizeException | InvalidAlgorithmParameterException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		String input=id +' '+ password +' '+ name +' '+ address +' '+ hwakgwa +' '+ PhoneNum;
 		try {
 			bw.write(input);
-//			bw.write(id);
-//			bw.write("\n");
-//			bw.write(password);
-//			bw.write("\n");
-//			bw.write(name);
-//			bw.write("\n");
-//			bw.write(address);
-//			bw.write("\n");
-//			bw.write(hwakgwa);
-//			bw.write("\n");
-//			bw.write(PhoneNum);
-//			bw.write("\n");
-			bw.newLine();
+			bw.newLine();			
 			bw.flush();
 			bw.close();
 
@@ -60,9 +66,9 @@ public class MHwewon {
 		}
 	}
 
-	private void set(OHwewon oHwewon) {
+	private void set(OHwewon oHwewon) throws InvalidKeyException, NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidParameterSpecException, UnsupportedEncodingException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException {
 		this.id=oHwewon.getId();
-		this.password=oHwewon.getPassword();
+		this.password=oHwewon.DgetPassword();
 		this.name=oHwewon.getName();
 		this.address=oHwewon.getAddress();
 		this.hwakgwa=oHwewon.getHwakgwa();
