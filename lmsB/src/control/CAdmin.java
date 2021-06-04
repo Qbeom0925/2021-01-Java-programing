@@ -21,6 +21,8 @@ public class CAdmin {
 	public void changeHwewon() {
 		dAdmin.DChangeHwewon();
 	}
+	
+
 
 
 }

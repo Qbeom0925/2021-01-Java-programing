@@ -28,9 +28,6 @@ public class CSugansincheon {
 	public void SList(OHwewon oHwewon, String grade) {
 		this.dSugansincheon.sList(oHwewon, grade);
 	}
-	
-	
-
 
 	public boolean SCheck(OLecture oLecture, OHwewon oHwewon) {
 		if(this.dSugansincheon.SDchekc(oLecture, oHwewon)==true) {
@@ -38,5 +35,13 @@ public class CSugansincheon {
 		}else{
 			return false;
 		}
+	}
+
+	public void CWsave(OHwewon oHwewon_1, String lecture) {
+		this.dSugansincheon.DWsave(oHwewon_1, lecture);
+	}
+
+	public void CWdelete(OHwewon oHwewon_1, String id) {
+		this.dSugansincheon.DWdelete(oHwewon_1, id);
 	}
 }

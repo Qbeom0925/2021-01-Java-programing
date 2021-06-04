@@ -26,7 +26,7 @@ public class DSugansincheon {
 	public void save(OLecture oLecture, OHwewon oHwewon) {
 		// TODO Auto-generated method stub
 		try {
-			File file = new File("user/" + oHwewon.getId() + "_sinchoen.txt");
+			File file = new File("user/" + oHwewon.getId() + "_sincheon.txt");
 			FileWriter filewriter = new FileWriter(file, true);
 			BufferedWriter bw = new BufferedWriter(filewriter);
 
@@ -48,7 +48,7 @@ public class DSugansincheon {
 		Vector v = new Vector();
 		int index = 0;
 		try {
-			File file = new File("user/" + oHwewon.getId() + "_sinchoen.txt");
+			File file = new File("user/" + oHwewon.getId() + "_sincheon.txt");
 			FileReader filereader = new FileReader(file);
 			BufferedReader bufReader = new BufferedReader(filereader);
 			String line = "";
@@ -62,7 +62,7 @@ public class DSugansincheon {
 			v.remove(input);
 			file.delete();
 
-			File Newfile = new File("user/" + oHwewon.getId() + "_sinchoen.txt");
+			File Newfile = new File("user/" + oHwewon.getId() + "_sincheon.txt");
 			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(Newfile));
 			for (int i = 0; i < v.size(); i++) {
 				String inputString = (String) v.get(i);
@@ -83,7 +83,7 @@ public class DSugansincheon {
 	public void sList(OHwewon oHwewon, String grade) {
 		  try{
 			  	System.out.println("현재 수강신청 학점: "+grade);
-			  	File file = new File("user/" + oHwewon.getId() + "_sinchoen.txt");
+			  	File file = new File("user/" + oHwewon.getId() + "_sincheon.txt");
 	            FileReader filereader = new FileReader(file);
 	            BufferedReader bufReader = new BufferedReader(filereader);
 	            String line = "";
@@ -104,7 +104,7 @@ public class DSugansincheon {
 		Vector v = new Vector();
 		int index = 0;
 		try {
-			File file = new File("user/" + oHwewon.getId() + "_sinchoen.txt");
+			File file = new File("user/" + oHwewon.getId() + "_sincheon.txt");
 			FileReader filereader = new FileReader(file);
 			BufferedReader bufReader = new BufferedReader(filereader);
 			String line;
@@ -153,6 +153,58 @@ public class DSugansincheon {
 			e.printStackTrace();
 		}
 		return false;
+	}
+
+	public void DWsave(OHwewon oHwewon_1, String lecture) {
+		// TODO Auto-generated method stub
+				try {
+					File file = new File("user/" + oHwewon_1.getId() + "_sincheon.txt");
+					FileWriter filewriter = new FileWriter(file, true);
+					BufferedWriter bw = new BufferedWriter(filewriter);
+
+					bw.write(lecture);
+					bw.newLine();
+					bw.flush();
+					bw.close();
+					filewriter.close();
+					bw.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}		
+	}
+
+	public void DWdelete(OHwewon oHwewon, String id) {
+		Vector v = new Vector();
+		int index = 0;
+		try {
+			File file = new File("user/" + oHwewon.getId() + "_sincheon.txt");
+			FileReader filereader = new FileReader(file);
+			BufferedReader bufReader = new BufferedReader(filereader);
+			String line;
+			String input;
+			while ((line = bufReader.readLine()) != null) {
+				input=line.substring(0, line.indexOf(' '));
+				if(input.equals(id)) {
+				}else {
+					v.add(line);
+				}
+				index++;
+			}
+			
+			File Newfile = new File("user/" + oHwewon.getId() + "_sincheon.txt");
+			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(Newfile));
+			for (int i = 0; i < v.size(); i++) {
+				String inputString = (String) v.get(i);
+				bufferedWriter.write(inputString);
+				bufferedWriter.newLine();
+			}
+			bufferedWriter.close();
+			bufReader.close();
+			
+			
+	}catch (Exception e) {
+		// TODO: handle exception
+	}		
 	}
 	
 }

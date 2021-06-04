@@ -19,7 +19,7 @@ public class VIndex {
 	public String show(String fileName, String message) {
 		System.out.println(message+" 선택하세요.");
 		
-		Vector<OIndex> indices = cIndex.getAll(fileName);   // 여기서 오류남
+		Vector<OIndex> indices = cIndex.getAll(fileName);
 		for(OIndex index: indices) {
 			System.out.println(index.getId() + " " + index.getName());
 		}		

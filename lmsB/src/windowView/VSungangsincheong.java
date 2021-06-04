@@ -37,7 +37,6 @@ public class VSungangsincheong extends JPanel {
 		this.vHakgwaSelection.initialize();
 		this.vHakgwaSelection.getDate("root");
 
-		
 		this.vGangjwaSelection.initialize();
 		this.vGangjwaSelection.addRow("english");
 
@@ -46,6 +45,5 @@ public class VSungangsincheong extends JPanel {
 
 		this.vSincheong.initialize();	
 		this.vSincheong.addRow("english");
-
 	}
 }

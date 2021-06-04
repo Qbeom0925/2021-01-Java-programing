@@ -154,7 +154,7 @@ public class DMiridamgi {
 				v.add(line);
 				index++;
 			}
-			System.out.println("삭제할 과목의 번호를 입력하세요...");
+			System.out.println("삭제할 과목의 번호를 입력하세요.");
 			int input = this.scanner.nextInt();
 			v.remove(input);
 			file.delete();
@@ -191,11 +191,10 @@ public class DMiridamgi {
 			}
 			
 
-			System.out.println("신청할 과목의 번호를 선택하세요..");
+			System.out.println("신청할 과목의 번호를 선택하세요.");
 			this.id = this.scanner.next();
 			
-			
-			File SFile = new File("user/" + oHwewon.getId() + "_sinchoen.txt");
+			File SFile = new File("user/" + oHwewon.getId() + "_sincheon.txt");
 			String lectures;
 			Scanner scan;
 			scan = new Scanner(SFile);
@@ -222,8 +221,6 @@ public class DMiridamgi {
 						}else {
 							System.out.print("신청 가능학점을 초과합니다.");
 						}
-
-
 					}
 					
 				}
@@ -254,4 +251,70 @@ public class DMiridamgi {
 	            System.out.println(e);
 	        }		
 	}
+	
+	public void DWSave(OHwewon oHwewon, String lecture) {
+		try{File file = new File("user/" + oHwewon.getId() + "_bag.txt");
+		FileWriter filewriter = new FileWriter(file, true);
+		BufferedWriter bw = new BufferedWriter(filewriter);
+
+		bw.write(lecture);
+		bw.newLine();
+		bw.flush();
+		filewriter.close();
+		bw.close();
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	public void DWSincheon(OHwewon oHwewon, String lecture) {
+		try{
+		File file = new File("user/" + oHwewon.getId() + "_sincheon.txt");
+		FileWriter filewriter = new FileWriter(file, true);
+		BufferedWriter bw = new BufferedWriter(filewriter);
+
+		bw.write(lecture);
+		bw.newLine();
+		bw.flush();
+		filewriter.close();
+		bw.close();
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+
+	public void DWDelte(OHwewon oHwewon, String id) {
+		Vector v = new Vector();
+		int index = 0;
+		try {
+			File file = new File("user/" + oHwewon.getId() + "_bag.txt");
+			FileReader filereader = new FileReader(file);
+			BufferedReader bufReader = new BufferedReader(filereader);
+			String line;
+			String input;
+			while ((line = bufReader.readLine()) != null) {
+				input=line.substring(0, line.indexOf(' '));
+				if(input.equals(id)) {
+				}else {
+					v.add(line);
+				}
+				index++;
+			}
+			
+			File Newfile = new File("user/" + oHwewon.getId() + "_bag.txt");
+			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(Newfile));
+			for (int i = 0; i < v.size(); i++) {
+				String inputString = (String) v.get(i);
+				bufferedWriter.write(inputString);
+				bufferedWriter.newLine();
+			}
+			bufferedWriter.close();
+			bufReader.close();
+			
+			
+	}catch (Exception e) {
+		// TODO: handle exception
+	}
+		}
 }

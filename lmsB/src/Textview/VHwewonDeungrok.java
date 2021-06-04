@@ -77,7 +77,7 @@ public class VHwewonDeungrok {
       System.out.print("회원등록이 완료되었습니다.");
 
       try {
-          File file_s = new File("user/" + oHwewon.getId() + "_sinchoen.txt");
+          File file_s = new File("user/" + oHwewon.getId() + "_sincheon.txt");
 		file_s.createNewFile();
 	      File file_b = new File("user/" + oHwewon.getId() + "_bag.txt");
 		file_b.createNewFile();

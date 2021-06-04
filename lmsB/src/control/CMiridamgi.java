@@ -30,4 +30,16 @@ public class CMiridamgi {
 	public void CMdelte(OHwewon oHwewon) {
 		this.dMiridamgi.Mdelete(oHwewon);
 	}
+
+	public void CWsave(OHwewon oHwewon, String lecture) {
+		this.dMiridamgi.DWSave(oHwewon, lecture);
+	}
+	
+	public void CWsincheon(OHwewon oHwewon, String lecture) {
+		this.dMiridamgi.DWSincheon(oHwewon, lecture);
+	}
+	
+	public void CWdelete(OHwewon oHwewon, String id) {
+		this.dMiridamgi.DWDelte(oHwewon, id);
+	}
 }

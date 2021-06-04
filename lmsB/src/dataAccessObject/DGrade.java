@@ -22,7 +22,7 @@ public class DGrade {
 	public String SreadAll(OHwewon oHwewon) {
 		String Grade = null ;
 		try {
-			File file = new File("user/" + oHwewon.getId() + "_sinchoen.txt");
+			File file = new File("user/" + oHwewon.getId() + "_sincheon.txt");
 			   Scanner scan = new Scanner(file);
 			   this.mLecture = new MLecture();
 			   int max = 0;

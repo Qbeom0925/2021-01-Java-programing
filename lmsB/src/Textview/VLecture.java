@@ -37,5 +37,27 @@
 	  }
 	  return null;
 	 }
+
+	public void VaddLecture(String FileName) {
+		System.out.println("현재 존재하는 과목입니다.");
+		  
+		  Vector<OLecture> lectures = cLecture.getAll(FileName);
+		  for(OLecture lecture: lectures) {
+		   System.out.println(lecture.getId()+ " "
+				   				+lecture.getLectureName()+" "
+				   				+lecture.getProfName()+" "
+				   				+lecture.getCredits()+" "
+				   				+lecture.getTime());
+		  }
+		this.cLecture.CaddLecture(FileName);
+	}
+
+	public void VdelteLecture(String FileName) {
+		this.cLecture.Cdeletelecture(FileName);
+	}
+
+	public void VchangeLecture(String FileName) {
+		this.cLecture.CchangeLecture(FileName);		
+	}
 	 
 }

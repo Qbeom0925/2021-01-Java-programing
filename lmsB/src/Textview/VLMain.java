@@ -21,12 +21,12 @@ public class VLMain {
       this.scanner = scanner;
       this.initial = new VInitial(scanner);
     }
-   public void run() throws InvalidKeyException, NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidParameterSpecException, UnsupportedEncodingException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException {
+   public void run() {
       System.out.println("LMain::run()");
       this.initial.show();
    }
 
-   public static void main(String[] args) throws InvalidKeyException, NoSuchAlgorithmException, InvalidKeySpecException, NoSuchPaddingException, InvalidParameterSpecException, UnsupportedEncodingException, BadPaddingException, IllegalBlockSizeException, InvalidAlgorithmParameterException {
+   public static void main(String[] args) {
       Scanner scanner = new Scanner(System.in);
       VLMain main = new VLMain(scanner);
       main.run();

@@ -76,7 +76,7 @@ public class VSugangsincheon {
 										System.out.println("-------추가신청-------");
 									} else if (choice == 2) {
 										System.out.println("프로그램 종료합니다.");
-										break;
+										continue;
 									}
 								}else if (input == 2) {
 									File f = new File("user/" + oHwewon.getId() + "_sinchoen.txt");
@@ -96,7 +96,7 @@ public class VSugangsincheon {
 										System.out.println("-------추가신청-------");
 									} else if (choice == 2) {
 										System.out.println("프로그램 종료합니다.");
-										break;
+										continue;
 									}
 								}
 							}
@@ -119,7 +119,7 @@ public class VSugangsincheon {
 
 					if (choice == 2) {
 						System.out.println("프로그램 종료합니다.");
-						break;
+						continue;
 					}
 
 				}
@@ -134,7 +134,7 @@ public class VSugangsincheon {
 
 					if (choice == 2) {
 						System.out.println("프로그램 종료합니다.");
-						break;
+						continue;
 					}
 				}
 			} else if (input == 5) {
